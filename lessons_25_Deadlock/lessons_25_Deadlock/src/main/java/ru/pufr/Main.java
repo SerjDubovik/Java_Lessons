@@ -45,7 +45,7 @@ class Runner {
     private void takeLock(Lock lock1, Lock lock2) {
         boolean firstLockTaken = false;
         boolean secondLockTaken = false;
-        
+
 
         while (true) {
             try {
