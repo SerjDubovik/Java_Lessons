@@ -9,7 +9,8 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(200);
 
-        Connection connection = Connection.getConnection();
+        Connection connection;
+        connection = Connection.getConnection();
 
         for(int i = 0;i < 10; i++) {
             executorService.submit(new Runnable() {

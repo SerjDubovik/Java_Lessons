@@ -4,6 +4,8 @@ import java.util.Random;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import static ru.pufr.Account.transfer;
+
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
@@ -79,7 +81,7 @@ class Runner {
             takeLock(lock1, lock2);
 
             try {
-                Account.transfer(account1, account2, random.nextInt(100));
+                transfer(account1, account2, random.nextInt(100));
             } finally {
                 lock1.unlock();
                 lock2.unlock();
@@ -95,7 +97,7 @@ class Runner {
             takeLock(lock2, lock1);
 
             try {
-                Account.transfer(account2, account1, random.nextInt(100));
+                transfer(account2, account1, random.nextInt(100));
             } finally {
                 lock1.unlock();
                 lock2.unlock();
